@@ -1,4 +1,4 @@
-package com.diy.app;
+package com.diy.framework.value;
 
 import java.util.Collections;
 import java.util.Map;

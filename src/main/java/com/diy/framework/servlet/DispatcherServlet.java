@@ -1,4 +1,8 @@
-package com.diy.app;
+package com.diy.framework.servlet;
+
+import com.diy.framework.controller.Controller;
+import com.diy.framework.view.resolver.JspViewResolver;
+import com.diy.framework.view.resolver.ViewResolver;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;

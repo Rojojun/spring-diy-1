@@ -1,5 +1,8 @@
 package com.diy.app;
 
+import com.diy.framework.controller.Controller;
+import com.diy.framework.enums.HttpMethod;
+import com.diy.framework.value.ModelAndView;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
@@ -8,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.*;
 
-public class LectureController implements Controller{
+public class LectureController implements Controller {
     private final Map<Long, Lecture> lectureRepository = new HashMap<>();
     private final ObjectMapper objectMapper = new ObjectMapper();
 

@@ -1,4 +1,4 @@
-package com.diy.app;
+package com.diy.framework.view;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;

@@ -1,4 +1,4 @@
-package com.diy.app;
+package com.diy.framework.value;
 
 public record Model(
         String key,

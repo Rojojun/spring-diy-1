@@ -1,4 +1,4 @@
-package com.diy.app;
+package com.diy.framework.enums;
 
 public enum HttpMethod {
     GET,
