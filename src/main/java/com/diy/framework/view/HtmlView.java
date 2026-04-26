@@ -1,5 +1,7 @@
 package com.diy.framework.view;
 
+import com.diy.framework.value.Model;
+
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -11,7 +13,7 @@ public record HtmlView(
         String viewName
 ) implements View {
     @Override
-    public void render(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
+    public void render(Model model, HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
         final String viewFile = readViewFile(req);
 
         res.setContentType("text/html;charset=utf-8");

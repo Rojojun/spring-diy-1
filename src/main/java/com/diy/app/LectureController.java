@@ -2,6 +2,7 @@ package com.diy.app;
 
 import com.diy.framework.controller.Controller;
 import com.diy.framework.enums.HttpMethod;
+import com.diy.framework.value.Model;
 import com.diy.framework.value.ModelAndView;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -26,9 +27,8 @@ public class LectureController implements Controller {
 
     private ModelAndView doGet(HttpServletRequest request, HttpServletResponse response) {
         Collection<Lecture> lectures = lectureRepository.values();
-        Map<String, Object> map = new HashMap<>();
-        map.put("lectures", lectures);
-        return ModelAndView.of("lecture-list", map);
+        Model model = new Model(Map.of("lectures", lectures));
+        return ModelAndView.of("lecture-list", model);
     }
 
     private ModelAndView doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {

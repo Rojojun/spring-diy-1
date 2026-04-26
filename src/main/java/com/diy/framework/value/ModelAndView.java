@@ -1,17 +1,14 @@
 package com.diy.framework.value;
 
-import java.util.Collections;
-import java.util.Map;
-
 public record ModelAndView(
         String viewName,
-        Map<String, Object> model
+        Model model
 ) {
     public static ModelAndView fromViewName(String viewName) {
-        return new ModelAndView(viewName, Collections.emptyMap());
+        return new ModelAndView(viewName, Model.empty());
     }
 
-    public static ModelAndView of(String viewName, Map<String, Object> model) {
+    public static ModelAndView of(String viewName, Model model) {
         return new ModelAndView(viewName, model);
     }
 }

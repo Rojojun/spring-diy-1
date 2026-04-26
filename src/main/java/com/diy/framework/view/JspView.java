@@ -1,5 +1,7 @@
 package com.diy.framework.view;
 
+import com.diy.framework.value.Model;
+
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -10,7 +12,7 @@ public record JspView(
         String viewName
 ) implements View {
     @Override
-    public void render(final HttpServletRequest req, final HttpServletResponse res) throws ServletException, IOException {
+    public void render(Model model, final HttpServletRequest req, final HttpServletResponse res) throws ServletException, IOException {
         final RequestDispatcher requestDispatcher = req.getRequestDispatcher(viewName);
         requestDispatcher.forward(req, res);
     }
