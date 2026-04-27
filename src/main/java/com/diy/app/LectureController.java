@@ -14,7 +14,6 @@ import java.util.*;
 
 public class LectureController implements Controller {
     private final Map<Long, Lecture> lectureRepository = new HashMap<>();
-    private final ObjectMapper objectMapper = new ObjectMapper();
 
     @Override
     public ModelAndView handleRequest(HttpServletRequest request, HttpServletResponse response) throws Exception {
@@ -32,11 +31,10 @@ public class LectureController implements Controller {
     }
 
     private ModelAndView doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        JsonNode body = objectMapper.readTree(request.getInputStream());
-
+        Map<String, ?> body = (Map<String, ?>) request.getAttribute("params");
         long id = autoIncrement();
-        String name = body.get("name").asText();
-        double price = body.get("price").asDouble();
+        String name = body.get("name").toString();
+        double price = Double.parseDouble(body.get("price").toString());
 
         lectureRepository.put(id, new Lecture(id, name, price));
 

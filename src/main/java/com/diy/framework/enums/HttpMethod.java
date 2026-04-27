@@ -9,6 +9,5 @@ public enum HttpMethod {
 
     public static HttpMethod equals(String compare) {
         return valueOf(compare);
-//        return this.toString().equals(compare) ? this : null;
     }
 }
